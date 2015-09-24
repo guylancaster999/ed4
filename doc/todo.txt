@@ -1,0 +1,61 @@
+To do
+
+2  Comments like David Hepworth
+
+Doing
+
+Done
+1.Replace go with a button
+2. Remove RHS "Video" etc
+3.Ed Barton->Edward Barton
+4.ArtWorks->Walking in the House"
+5 Contact <A href="mailto....."
+6 Search for -> Search
+7 Image art cant get into
+8 Remove (32) from categories
+9 Youtube embed instructions in 
+10 2013 (22) fonts settable
+11 Pin articles
+12 Videos responsive
+
+Ed
+1.Bigger Photos
+2.Update edbarton.com codes->guy
+
+
+
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '828060457301904',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+like button
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+
+app id
+edwardbarton 828060457301904
+
+

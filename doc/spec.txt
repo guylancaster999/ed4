@@ -1,0 +1,30 @@
+database schema
+===============
+
+category table
+--------------
+code n 10
+descr c 50
+
+artwork table
+-------------
+code n 10
+hdg  c 50 
+txt  c 1000
+category n 10
+date  c8
+
+artwork comment
+---------------
+code n 10
+artwork n 10
+txt c 100
+order n 2
+
+artwork img
+-----------
+code n 10
+artwork n 10
+flnm c 50
+ttl   c 50
+order n 2
