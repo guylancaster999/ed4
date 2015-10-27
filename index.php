@@ -134,7 +134,7 @@ $screentype		= Page::default_blank($_REQUEST["screentype"],"category");
  		}
 		if ($ctr==0)
 		{
-			print Page::fmt_emlement("No articles found for category ".$descrCat,"footer");
+			print Page::fmt_element("No articles found for category ".$descrCat,"footer");
 		}
 		else
 		{
