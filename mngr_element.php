@@ -6,7 +6,7 @@ DbAdmin::open_db();
 $code		=$_REQUEST["code"];
 $descr		=$_REQUEST["descr"];
 $color		=$_REQUEST["color"];
-$font		=$_REQUEST["font"];
+$font		=str_replace("^",",",$_REQUEST["font"]);
 $fontsize	=$_REQUEST["fontsize"];
 $fontweight	=$_REQUEST["fontweight"];
 $err   		=$_REQUEST["err"];

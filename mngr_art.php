@@ -8,9 +8,8 @@ $code		=$_REQUEST["code"];
 
 if (strlen($code)>0)
 { 
-	$qry		="select hdg,txt,category,artdate from edart ";
-	$qry		.="where code=".$code.";";
-	$result 	= mysql_query($qry) or die('Query failed: ' . mysql_error());
+	$qry		="select hdg,txt,category,artdate from edart where code=".$code.";";
+	$result 	= mysql_query($qry) or die('Query failed:'. mysql_error());
 	$row 		= mysql_fetch_array($result, MYSQL_ASSOC);
 	$hdg		= Page::unclean_text($_REQUEST["hdg"]);
 	$txt		= Page::unclean_text($row["txt"]);

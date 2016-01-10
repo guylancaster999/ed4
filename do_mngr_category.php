@@ -129,7 +129,7 @@ if (strlen($err)==0)
 		{
 			$qry="select descr,ordr,colr, font, fontsize, fontweight, italic ";
 			$qry.=" from edcategory where code=".$code.";";
-		   $result = mysql_query($qry) or die('Query failed: ' . mysql_error());
+		    $result = mysql_query($qry) or die('Query failed: ' . mysql_error());
 			$row = mysql_fetch_array($result, MYSQL_ASSOC);
 			if ( mysql_affected_rows() ==0)
 			{
@@ -168,7 +168,6 @@ if (strlen($err)==0)
 	   break;
 	   
 		case "List":
-		
 		print Page::hdr("M");
 		?>
 	<div class="container">
@@ -198,7 +197,7 @@ if (strlen($err)==0)
 			$descr		=$row["descr"];
 			$ordr		=$row["ordr"];
 			$colr		=$row["colr"];
-			$font		=$row["font"];
+			$font		= $row["font"];
 			$fontweight	=$row["fontweight"];
 			$fontsize	=$row["fontsize"];
 			$italic		=$row["italic"];
@@ -207,7 +206,7 @@ if (strlen($err)==0)
 			$link.='&descr='.$descr;
 			$link.='&ordr='.$ordr;
 			$link.='&colr='.$colr;
-			$link.='&font='.$font;
+			$link.='&font='.str_replace(",","^",$font);
 			$link.='&fontweight='.$fontweight;
 			$link.='&fontsize='.$fontsize;
 			$link.='&italic='.$italic;
@@ -251,7 +250,7 @@ $loc.="&code=".$code;
 $loc.="&descr=".$descr;
 $loc.="&ordr=".$ordr;
 $loc.="&colr=".$colr;
-$loc.="&font=".$font;
+$loc.="&font=".str_replace(",","^",$font);
 $loc.="&fontsize=".$fontsize;
 $loc.="&fontweight=".$fontweight;
 $loc.="&italic=".$italic;

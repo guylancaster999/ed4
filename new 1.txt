@@ -1,0 +1,11 @@
+http://www.edwardbarton.com/mngr_category.php
+?code=12
+&descr=Photographs
+&ordr=5
+&colr=800080
+&font=Libre%20Baskerville,Times,serif
+&fontweight=200
+&fontsize=13
+&italic=N
+&status=List-Item
+&err=

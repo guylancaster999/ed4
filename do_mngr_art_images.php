@@ -60,7 +60,7 @@ function scale($from,$maxWdth)
 }
 function link_here($artid,$id,$filenm,$descr,$hdg,$date,$category,$txt,$err="",$status="")
 {
-	$link="mngr_art_images.php";
+	$link="http://www.edwardbarton.com/mngr_art_images.php";
 	$link.="?artid=".$artid;
 	$link.="&id=".$id;
 	$link.="&filenm=".$filenm;
@@ -75,7 +75,7 @@ function link_here($artid,$id,$filenm,$descr,$hdg,$date,$category,$txt,$err="",$
 }
 function link_back($artid,$hdg,$date,$category,$txt)
 {
-	$link="mngr_art.php";
+	$link="http://www.edwardbarton.com/mngr_art.php";
 	$link.="?code=".$artid;
 	$link.="&hdg=".$hdg;
 	$link.="&date=".$date;

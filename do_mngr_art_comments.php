@@ -1,7 +1,7 @@
 <?php
 function link_here($artid,$id,$descr,$filenm,$reply,$reviewedflag,$hdg,$date,$category,$txt,$err="",$status="")
 {
-	$link="mngr_art_comments.php";
+	$link="http://www.edwardbarton.com/mngr_art_comments.php";
 	$link.="?artid=".$artid;
 	$link.="&id=".$id;
 	$link.="&descr=".$descr;
@@ -18,7 +18,7 @@ function link_here($artid,$id,$descr,$filenm,$reply,$reviewedflag,$hdg,$date,$ca
 }
 function link_back($artid,$hdg,$date,$category,$txt)
 {
-	$link="mngr_art.php";
+	$link="http://www.edwardbarton.com/mngr_art.php";
 	$link.="?code=".$artid;
 	$link.="&hdg=".$hdg;
 	$link.="&date=".$date;

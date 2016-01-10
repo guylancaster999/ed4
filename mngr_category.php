@@ -9,7 +9,7 @@ $colr		=$_REQUEST["colr"];
 $fontsize	=$_REQUEST["fontsize"];
 $fontweight	=$_REQUEST["fontweight"];
 $italic		=$_REQUEST["italic"];
-$font		=$_REQUEST["font"];
+$font		=str_replace("^",",",$_REQUEST["font"]);
 $err   		=$_REQUEST["err"];
 $status		=$_REQUEST["status"];
 ?>

@@ -1,3 +1,3 @@
 # ed4
-Ed barton blog
-Uses mysql, php, html, css, jquery
+Edward barton blog
+Uses mysql, php (including Graphics library), html, css, jquery

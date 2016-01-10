@@ -5,7 +5,7 @@ $pass=$_SESSION["pass"];
 
 if (!Page::test_psw($pass)!=1)
 {	
-    header("Location: mngr_login.php?err=Incorrect-Password ");
+    header("Location: http://www.edwardbarton.com/mngr_login.php?err=Incorrect-Password ");
 	exit;
 } 
 DbAdmin::open_db();
@@ -60,7 +60,6 @@ switch($submit)
 	$err.=Page::validate_colour($allcatcolor,"All Categories");
 	$err.=Page::validate_colour($datecolor,"Date");
     $err.=Page::validate_colour($commentcolor,"Comment");
-   
     $err.=Page::validate_fontsize($ttl1fontsize,"Title 1");
     $err.=Page::validate_fontsize($ttl2fontsize,"Title 2");
     $err.=Page::validate_fontsize($hdgfontsize,"Heading");
@@ -72,8 +71,7 @@ switch($submit)
 	$err.=Page::validate_fontsize($datefontsize,"Date");
     $err.=Page::validate_fontsize($commentfontsize,"Comment");
     $err.=Page::validate_fontsize($replyfontsize,"Reply");
-
- $err.=Page::validate_fontweight($ttl1fontweight,"Title 1");
+	$err.=Page::validate_fontweight($ttl1fontweight,"Title 1");
     $err.=Page::validate_fontweight($ttl2fontweight,"Title 2");
     $err.=Page::validate_fontweight($hdgfontweight,"Heading");
     $err.=Page::validate_fontweight($txtfontweight,"Text");
@@ -99,7 +97,6 @@ switch($submit)
 		$qry.="     hdgcolor='".$hdgcolor."',";
 		$qry.="     replycolor='".$replycolor."',";
 		$qry.="     datecolor='".$datecolor."',";
-		
 		$qry.="     ttl1fontweight='".$ttl1fontweight."',";
 		$qry.="     ttl2fontweight='".$ttl2fontweight."',";
     	$qry.="     allcatfontweight='".$allcatfontweight."',";
@@ -111,8 +108,7 @@ switch($submit)
 		$qry.="   	hdgfontweight='".$hdgfontweight."',";
 		$qry.="   	replyfontweight='".$replyfontweight."',";
 		$qry.="     datefontweight='".$datefontweight."'";
-	
-    	$qry.="     ttl1fontsize='".$ttl1fontsize."',";
+	   	$qry.="     ttl1fontsize='".$ttl1fontsize."',";
 		$qry.="     ttl2fontsize='".$ttl2fontsize."',";
 		$qry.="     allcatfontsize='".$allcatfontsize."',";
 		$qry.="     linkfontsize='".$linkfontsize."',";
@@ -123,7 +119,6 @@ switch($submit)
 		$qry.="     hdgfontsize='".$hdgfontsize."',";
 		$qry.="     datefontsize='".$datefontsize."',";
 		$qry.="     replyfontsize='".$replyfontsize."'";
-	
 	    $qry.=" 	where indx=1;";
 		$result = mysql_query($qry) or die('Query ".$qry." failed: ' . mysql_error());
 		$status="Updated System"; 

@@ -35,15 +35,15 @@ switch($submit)
         $result = mysql_query($qry) or die('Query '.$qry.'failed: ' . mysql_error());		
 	}
 	$status="Deleted Comment ".$id;
-	header("location:mngr_comments.php");
+	header("location: http://www.edwardbarton.com/mngr_comments.php");
 	exit;
 		
 	case "Return":
-		header("location:mngr_comments.php");
+		header("location: http://www.edwardbarton.com/mngr_comments.php");
 		exit;
 	break;
 }
-$link="location:mngr_comment.php";
+$link="location: http://www.edwardbarton.com/mngr_comment.php";
 $link.="?artid=".$artid;
 $link.="&hdg=".$hdg;
 $link.="&id=".$id;

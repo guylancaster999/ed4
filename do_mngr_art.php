@@ -1,7 +1,7 @@
 <?php	
  function link_here($code,$hdg,$category,$txt,$date,$status,$err)
 {
-	$ret="mngr_art.php";
+	$ret="http://www.edwardbarton.com/mngr_art.php";
 	$ret.="?err=".$err;
 	$ret.="&code=".$code;
 	$ret.="&hdg=".$hdg;
@@ -12,7 +12,7 @@
 }  
 function link_to_images($code,$hdg,$category,$txt,$date,$status,$err)
 {
-	$ret="mngr_art_images.php";
+	$ret="http://www.edwardbarton.com/mngr_art_images.php";
 	$ret.="?err=".$err;
 	$ret.="&artid=".$code;
 	$ret.="&hdg=".$hdg;
@@ -24,7 +24,7 @@ function link_to_images($code,$hdg,$category,$txt,$date,$status,$err)
 }  
 function link_to_comments($code,$hdg,$category,$txt,$date,$status,$err)
 {
-	$ret="mngr_art_comments.php";
+	$ret="http://www.edwardbarton.com/mngr_art_comments.php";
 	$ret.="?err=".$err;
 	$ret.="&artid=".$code;
 	$ret.="&hdg=".$hdg;

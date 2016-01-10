@@ -153,7 +153,7 @@ if (strlen($err)==0)
 			$link.='?code='.$code;
 			$link.='&descr='.$descr;
 			$link.='&color='.$color;
-			$link.='&font='.$font;
+			$link.='&font='.str_replace(",","^",$font);
 			$link.='&fontsize='.$fontsize;
 			$link.='&fontweight='.$fontweight;
 			$link.='&italic='.$italic;
@@ -193,7 +193,7 @@ $loc.="?err=".$err;
 $loc.="&code=".$code;
 $loc.="&descr=".$descr;
 $loc.="&color=".$color;
-$loc.="&font=".$font;
+$loc.="&font=".str_replace(",","^",$font);
 $loc.="&fontsize=".$fontsize;
 $loc.="&fontweight=".$fontweight;
 $loc.="&italic=".$italic;

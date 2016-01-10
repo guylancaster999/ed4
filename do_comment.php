@@ -6,7 +6,7 @@ $commentid    	= $_POST["commentid"];
 $yourname		=$_POST["yourname"];
 $screentype    	= $_POST["screentype"];
 $hdg	    	= $_POST["hdg"];
-$link			="index_comments.php";
+$link			="http://www.edwardbarton.com/index_comments.php";
 $link			.="?artid=".$artid;
 $link			.="&screentype=".$screentype;
 $link			.="&hdg=".$hdg;
