@@ -5,6 +5,7 @@ body
 }    
 table
 {
+	 
 	border:1px;
 	border-color:#fff;
 	background-color:#eee;
@@ -15,8 +16,9 @@ table
 
 }
 td,th,tr
-{padding:8px;
-	}
+{
+	padding:8px;
+}
 input
 {
 	border: 1px solid; 

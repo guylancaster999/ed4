@@ -1,6 +1,6 @@
 <?php
-require "classes/classes.php";
-Page::hdr("U");
+	require "classes/classes.php";
+	Page::hdr("U");
 ?>
 <body>
 <?php
@@ -13,8 +13,7 @@ $screentype	=$_REQUEST["screentype"];
   <div class="row" >
     <div class="col-sm-12" >
 	<?php
-				
-		print Page::fmt_element(Page::ttl1(),"ttl1")."<br/><br/>";
+		print Page::fmt_element("Walking in the House","ttl1")."<br/><br/>"; 
 		print Page::fmt_element($hdg,"hdg");
 		print "<br/><br/>";
 		$qryCom 		="select code, descr, reply,yourname ";
@@ -76,8 +75,8 @@ $screentype	=$_REQUEST["screentype"];
 			<td>
 			</td>
 			<td align='center'><input TYPE="image" SRC="img/button1.jpg" HEIGHT="30" WIDTH="30" BORDER="0" ALT="Go" class="gobutton"></td>
-		</td>
-</tr>		
+				</td>
+				</tr>		
 			</table>
 			</form>
  	</div>

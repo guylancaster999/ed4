@@ -3,7 +3,7 @@ class Page
 {
 	const FBTXTSZ 	= 217;
 	const RHSWIDTH 	= 800;
-	const BASEURL	="http%3A%2F%2Fwww.chorltonlittlegems.co.uk/ed";
+	const BASEURL	="http%3A%2F%2Fwww.edwardbarton.com";
     const TTL1		= "Walking in the House";
 	CONST TTL2 		= "Edward Barton";
 
@@ -30,7 +30,7 @@ class Page
 		}
 
 		$t3	=substr($t2,0,self::FBTXTSZ);
-		$t4="";   
+		$t4="";
 		$mode=0;
 		$ptr	=strrpos ( $t3,".");
 		return ($ptr===false ? $t3."..." : substr($t3,0,$ptr+1) );
@@ -44,28 +44,27 @@ class Page
 		$link.="&description=Ed%20Bartons%20Walking%20in%20the%20House%20Blog";
 		$link.="&display=popup";
 		$link.="&e2e=%7B%7D";
-		$link.="&link=http%3A%2F%2Fwww.chorltonlittlegems.co.uk%2Fed";
+		$link.="&link=http%3A%2F%2Fwww.edwardbarton.com";
 		$link.="&locale=en_GB";
 		$link.="&name=".$fbdescr;
-		$link.="&next=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FBhKMRj1sUPu.js%3Fversion%3D41%23cb%3Dfa5e76074%26domain%3Dwww.chorltonlittlegems.co.uk%26origin%3Dhttp%253A%252F%252Fwww.chorltonlittlegems.co.uk%252Ff1db5b94%26relation%3Dopener%26frame%3Df2c62aa41%26result%3D%2522xxRESULTTOKENxx%2522";
-		$link.="&picture=".$pic;	
+		$link.="&next=http%3A%2F%2Fstatic.ak.facebook.com%2Fconnect%2Fxd_arbiter%2FBhKMRj1sUPu.js%3Fversion%3D41%23cb%3Dfa5e76074%26domain%3Dwww.edwardbarton.com%26origin%3Dhttp%253A%252F%252Fwww.edwardbarton.com%252Ff1db5b94%26relation%3Dopener%26frame%3Df2c62aa41%26result%3D%2522xxRESULTTOKENxx%2522";
+		$link.="&picture=".$pic;
 		$link.="&sdk=joey";
 		$link.="&version=v2.4";
-	//http://stackoverflow.com/questions/7357001/share-button-post-to-wall-facebook-api
 		$setup='toolbar=0,location=0,statusbar=1,menubar=0,scrollbars=yes,width=600,height=300';
 		$winttl="edswindow";
-		$ret.= '<a href="#" 
-	         onclick="javascript:window.open('.$qt.$link.$qt.','.$qt.$winttl.$qt.','.$qt.$setup.$qt.');";  
+		$ret.= '<a href="#"
+	         onclick="javascript:window.open('.$qt.$link.$qt.','.$qt.$winttl.$qt.','.$qt.$setup.$qt.');";
 			 title="Share To Facebook">
 	                <img src="img/posttofb.png" alt="Share To Facebook" height="20" class="img-rounded">
 	       </a>';
 	return $ret;
 	}
 	static function twt($t)
-	{	
-	return '<a href="https://twitter.com/intent/tweet?button_hashtag=EdwardBarton&text='.$t.'" 
-		class="twitter-hashtag-button" 
-		data-related="guylancaster" 
+	{
+	return '<a href="https://twitter.com/intent/tweet?button_hashtag=EdwardBarton&text='.$t.'"
+		class="twitter-hashtag-button"
+		data-related="guylancaster"
 		data-url="http://www.chorltonlittlegems.co.uk/ed/index.php">Tweet #EdwardBarton</a>
 		<script>
 		!function(d,s,id)
@@ -83,14 +82,14 @@ class Page
 		</script>';
 		}
 	static function pin($g,$drctry,$descr="Next%20stop%3A%20Pinterest")
-	{ 
+	{
 		$ret='<a title="Pin It" ';
 		$ret.='href="//www.pinterest.com/pin/create/button/';
 		$ret.='?url='.self::BASEURL;
 		$ret.='&media='.self::BASEURL.'%2F'.$drctry.'%2F'.$g;
 		$ret.='&description='.$descr.'" ';
 		$ret.=' data-pin-do="buttonPin" data-pin-config="beside" data-pin-color="red">';
-		$ret.='<img src="img/pinit.jpg" alt="Pin it" height="24"/>';
+		$ret.='<img src="img/pinit.jpg" alt="Pin it" height="24" class="masthead"/>';
 		$ret.='</a>';
 		return $ret;
 	}
@@ -100,13 +99,13 @@ class Page
 		$pass 	= $_SESSION["pass"];
 		$rslt	= Page::test_psw($pass);
 		if ($rslt!= 1)
-		{	
+		{
 			header("Location: mngr_login.php?err=Incorrect-Password ");
 			exit;
 		}
 	}
 	static function test_psw($t)
-	{ 	
+	{
 		$md	=md5(strtoupper($t));
 		$ret= ($md=="34e0ffd10021627fccd616976b9ffaf0");
 		return $ret;
@@ -127,7 +126,7 @@ class Page
 	{
 		$ret = str_replace("~2","&quot;",$s);
 		$ret = str_replace("~1","&lsquo;",$ret);
-		$ret = str_replace("~3"," ",$ret); 
+		$ret = str_replace("~3"," ",$ret);
  		return $ret;
 	}
 	static function display_text($s)
@@ -153,7 +152,7 @@ class Page
 		$param1	= $param2 = $param3 = "";
 		$imgToPost="img/mastheadedward_240.jpg";
 		$fbdescr="";
-		
+
 		for ($i=0;$i<=strlen($t);$i++)
 		{
 			$c=substr($t,$i,1);
@@ -164,14 +163,14 @@ class Page
 				$mode	="";
 				$ttl	="";
 				break;
-		
+
 				case "|":
 				$stat++;
 				break;
-				
+
 				case "]";
 			$param1=strtolower(trim($param1));
-	
+
 			switch ($param1)
 			{
 			case 'image':
@@ -190,7 +189,7 @@ class Page
 				$ret		.="&nbsp;";
 				$ret		.= Page::pin($imgFilenm,"uploads",$imgDescr);
 				$imgToPost   ='uploads/'.$imgFilenm;
-        	
+
 			case 'link':
 				$ret.='</span>';
 				$ret.=Page::get_span('link');
@@ -255,14 +254,14 @@ class Page
 		$ret.="</span>";
 		$ret = Page::display_text($ret);
         $ret.= "<br/><br/>";
-	
+
 		$ret.="<table><tr><td valign='top'>";
-		
+
 		//comments
 		$link	="index_comments.php";
 		$link	.="?artid=".$artid;
 		$link	.="&screentype=".$screentype;
-		$link	.="&hdg=".$hdg;	
+		$link	.="&hdg=".$hdg;
 		$qts	='"';
 		$qryCom ="select count(*) as ctr ";
 		$qryCom .=" from edartcomment ";
@@ -271,17 +270,17 @@ class Page
 		$rowCom  = mysql_fetch_array($rsltCom , MYSQL_ASSOC);
 		$ctr	 = $rowCom['ctr'];
 		$ret.="<div class='btn'>";
-		$ret.="<a onclick='javascript:window.open( ".$qts.$link.$qts.", 
+		$ret.="<a onclick='javascript:window.open( ".$qts.$link.$qts.",
         			".$qts.$qts.",
-				   ".$qts."toolbar=0,location=0,statusbar=1,menubar=0,scrollbars=yes,width=800,height=600".$qts."); 
+				   ".$qts."toolbar=0,location=0,statusbar=1,menubar=0,scrollbars=yes,width=800,height=600".$qts.");
 				   return false;'>".Page::fmt_element("Comment (".$ctr.")", "comment")."</a>";
-		$ret.="</div>";		 
+		$ret.="</div>";
 		$ret.='</td>';
 		$ret.="<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>";
 		$ret.='<td valign="top">';
-		
+
 		//twitter feed
-		$ret.=Page::twt($hdg); 
+		$ret.=Page::twt($hdg);
 		$ret.="&nbsp;&nbsp;&nbsp;&nbsp;";
 		$ret.='</td>
 		<td valign="top">';
@@ -294,11 +293,11 @@ class Page
 		</table>";
 		$ret.="<br/>";
 		return $ret;
-	} 
+	}
 	static function fmt_link($ttl,$lnk,$fmttyp)
 	{
 		$ret=Page::get_span($fmttype);
-		$ret.="<a href='".$lnk."'>".$ttl."</a>" ; 
+		$ret.="<a href='".$lnk."'>".$ttl."</a>" ;
 		$ret.="</span>";
 		return $ret;
 	}
@@ -311,7 +310,7 @@ class Page
 		{
 			$style.="text-decoration: underline;";
 		}
-		$style.=" font-size:".$fontsize."pt;"; 
+		$style.=" font-size:".$fontsize."pt;";
 		$style.=" font-style:".($italic=="Y"? "italic": "normal").";";
 		$ret.= "<span style='".$style."'>";
 		$ret.=$s;
@@ -331,7 +330,7 @@ class Page
 		$fontweight	= $row["fontweight"];
 		$italic 	= $row["italic"];
 		$color		= "#".$row["color"];
-		$ret		.= "<span "; 
+		$ret		.= "<span ";
 		$ret		.=" style='font-size:".$fontsize.";";
 		$ret        .= "font-style:".($italic=="Y"?"italic":"normal").";";
 		$ret		.=' font-family:'.$font.';';
@@ -339,7 +338,7 @@ class Page
 		$ret		.=" color:".$color."'>";
 		return $ret;
 	}
-	
+
 	static function fmt_element($s,$element)
 	{
 		$ret=Page::get_span($element);
@@ -352,7 +351,7 @@ class Page
 		return  str_replace (" ","%20",$s);
 	}
 	static function count_digits($d)
-	{	
+	{
 	$ctr=0;
 	for ($i=0;$i<strlen($d); $i++)
 	{
@@ -389,18 +388,18 @@ class Page
 		{
 			$ret=$d." Font Weight must be 000-909. ";
 		}
-		return $ret; 
+		return $ret;
 	}
 	static function default_blank($s,$d)
 	{
 		$s=trim($s);
-		
+
 		if (strlen($s)==0)
 		{
 			$s=$d;
 		}
 		return $s;
-	}	
+	}
 	static function validate_colour($c,$d="")
 	{$ret="";
 	if(Page::count_hex($c)!=6)
@@ -410,7 +409,7 @@ class Page
 		return $ret;
 	}
 	static function count_hex($d)
-	{	 
+	{
 		$ctr =0;
 		for ($i=0;$i<strlen($d); $i++)
 		{
@@ -436,10 +435,10 @@ class Page
 		return $ok;
 	}
 	static function date_to_f($d)
-	{	
+	{
 		return substr($d,4,4).substr($d,2,2).substr($d,0,2);
 	}
-	
+
 	static function date_to_s($d)
 	{
 		return substr($d,6,2).substr($d,4,2).substr($d,0,4);
@@ -454,7 +453,7 @@ class Page
 		{$ret=substr($d,7,1);}
 		else
 		{$ret=substr($d,6,2);}
-			$ret.=" ";	
+			$ret.=" ";
 		switch(substr($d,4,2))
 		{case "01":
 		$ret.="January";
@@ -491,7 +490,7 @@ class Page
 		break;
 	case "12":
 		$ret.="December";
-		break;		
+		break;
 		}
 		$ret.=" ".substr($d,0,4);
 		return $ret;
@@ -502,59 +501,64 @@ class Page
 	}
 	static function Mngr_Menu()
 	{
-		print '<h1>Ed Barton</h1>  
+		print '<h1>Ed Barton</h1>
 		<h3>Manage Data</h3>
 	   <ul>
 	  <li><a href="mngr_category.php">Category</a></li>
 	  <li><a href="mngr_art.php">Artwork</a></li>
 	  <li><a href="mngr_comments.php">Comments</a></li>
-	    <li><a href="mngr_element.php">Fonts</a></li>
+	  <li><a href="mngr_element.php">Fonts</a></li>
 	  <li><a href="do_logout.php">Logout</a></li>
-	  <LI><A HREF="/ed">Public</a></li>
+	  <LI><A HREF="http://www.edwardbarton.com">Public</a></li>
 	  </ul>';
 	return;
 	}
-	
+
 	static function hdr($m)
 	{
 		$ret='<!DOCTYPE html>
 		<html lang="en">
 		<head>
+		<meta name="msvalidate.01" content="6E94CF0EA70F18D4781290A413CB5797" />
 		<link rel="shortcut icon" href="favicon.ico" />
-	<link rel="icon" href="favicon.ico" type="image/x-icon">
-  	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="css/index.css">
-	<link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet" type="text/css">';
-	 
+	  `	<link rel="icon" href="favicon.ico" type="image/x-icon">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="css/index.css">
+		<link href="http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700" rel="stylesheet" type="text/css">';
   if ($m=="M")
   {
-	  $ret.='<title></title>';
-    $ret.='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
+		$ret.='<title></title>';
+		$ret.='<META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">';
   }
 else
-{	  
-    $ret.='<title>Ed Barton</title>';
-	$ret.='<META NAME="ROBOTS" CONTENT="noINDEX, noFOLLOW">
-	<meta name="description" content="Edward Barton : Manchester Artist/Musician">
-	<meta name="keywords" content="Edward, Barton, Manchester, Artist, Musician">
+{
+    $ret.='<title>Edward Barton - Walking in the House Blog</title>';
+	$ret.='<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW" />
+	<meta name="description" content="Edward Barton : Manchester Artist/Musician/Songwriter/Poet - Walking in the House" />
+	<meta name="keywords" content="Edward, Barton, Obb, Oblong, Manchester, Artist, Musician, Ed, Songwriter, Poet, Walking in the House" />
 	<meta name="author" content="Guy Lancaster">';
 }
-  		$ret.='</head>'; 
+  		$ret.='</head>';
 		print $ret;
 		return ;
 	}
 }//class
+
 //Admin class
 class DbAdmin
-{	
+{
 	static function open_db()
 	{
-		$ret = mysql_connect("atlas.elite.net.uk", "chorlt02_db1_ms", "mW7ptYRKk") or die('Could not connect: ' . mysql_error());
-		$ret = mysql_select_db('chorlt02_db1', $ret);
+
+	$ret = mysql_connect('localhost', "edwardbarton", "Panda101") or die('Could not connect: ' . 	mysql_error());
+	$ret = mysql_select_db('edwardba_1', $ret);
+
+	//	$ret = mysql_connect("atlas.elite.net.uk", "chorlt02_db1_ms", "mW7ptYRKk") or die('Could not connect: ' . mysql_error());
+	//	$ret = mysql_select_db('chorlt02_db1', $ret);
 		return $ret;
-	}	 
+	}
 }

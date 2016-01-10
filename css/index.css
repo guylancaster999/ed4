@@ -58,3 +58,14 @@ height: 100%!important;
 	padding-top:0;
 	vertical-align:top;
 }
+.masthead 
+{
+        visibility:visible;
+}
+@media screen and (max-width: 480px) 
+{
+    .masthead {
+        visibility:hidden;
+		height:0;
+    }
+}
