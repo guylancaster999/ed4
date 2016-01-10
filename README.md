@@ -1,3 +1,3 @@
 # ed4
-Ed barton 4
-mysql php cms
+Ed barton blog
+Uses mysql, php, html, css, jquery

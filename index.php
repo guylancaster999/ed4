@@ -5,6 +5,7 @@
 	$fyle = "index.php";
 ?>
 <body>
+<!-- set screen width -->
 <script>
 $(function() {
     $.post('someScript.php', { width: screen.width, height:screen.height }, function(json) {
@@ -16,7 +17,6 @@ $(function() {
     },'json');
 });
 </script>
-
 <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
 <div id="fb-root"></div> 
 <script>(function(d, s, id) {
@@ -38,11 +38,11 @@ switch ($colz)
 	case "2":break;
 	default:$colz="2";
 }
-$screenWidth=$_SESSION['screen_width'];
-$isSmall	=($screenWidth<=750);
-$iscat		=(strlen($cat)>0);
-$issearch	=(strlen($search)>0);
-$isarchive	=($screentype=="archive"); 
+$screenWidth	=$_SESSION['screen_width'];
+$isSmall		=($screenWidth<=Page::SMALLSCREENWIDTH);
+$iscat			=(strlen($cat)>0);
+$issearch		=(strlen($search)>0);
+$isarchive		=($screentype=="archive"); 
 if ($isSmall && ($iscat || $issearch || $isarchive) )$colz="1";
 ?>
 <div class="container">

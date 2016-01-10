@@ -6,7 +6,8 @@ class Page
 	const BASEURL	="http%3A%2F%2Fwww.edwardbarton.com";
     const TTL1		= "Walking in the House";
 	CONST TTL2 		= "Edward Barton";
-
+	CONST SMALLSCREENWIDTH = 750;
+	
 	STATIC FUNCTION fbChop($t)
 	{
 	    $t1=$t;
